@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="styles/assets/img/favicon.png" rel="icon">
+  <link href="styles/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+
+
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/vendor/font-awesome/css/font-awesome.min.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/vendor/modal-video/css/modal-video.min.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/vendor/aos/aos.css') }}">
+ 
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/css/style.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/aos.css') }}">
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <!-- 
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/modal-video/css/modal-video.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+   -->
+
+  <title>Flask App </title>
+
+  <!-- Bootstraps Java Scipts Links -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+  <!-- JQuery links  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <!--High CHART LIVE  -->
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/highcharts-more.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="index.html"><span>e</span>Alarm</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          
+          <li class="menu-active"><a href="#about-us">Home</a></li>
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+<!--
+  <img src="styles/assets/img/hero-img.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+-->
+
+
+
+  <!-- ======= Footer ======= -->
+  <div  style="
+  margin-top: 15%;">
+
+
+
+
+
+
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+        <h1>Welcome to eAlarm</h1>
+        <h2>IOT based fire alerting &amp; indoor air quality monitoring system ...</h2>
+       
+      <img src="/static/hero-img2.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+      <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+      <div class="btns">
+        <a href="#"><i class="fa fa-apple fa-3x"></i> App Store</a>
+        <a href="#"><i class="fa fa-play fa-3x"></i> Google Play</a>
+        <a href="#"><i class="fa fa-windows fa-3x"></i> windows</a>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+
+
+
+  
+
+
+
+
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>simple systeme fordiscount </h2>
+          <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/cloud.svg" alt="img" class="img-fluid">
+              <h4>introducing whatsapp</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a href="#">read more</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/planet.svg" alt="img" class="img-fluid">
+              <h4>user friendly interface</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a href="#">read more</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-block">
+
+              <img src="assets/img/svg/asteroid.svg" alt="img" class="img-fluid">
+              <h4>build the app everyone love</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a href="#">read more</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Get Started Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="about-us" class="about-us padd-section">
+
+      
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <!-- Example row of columns -->
+        <div class="row">
+            
+                <div class="container-fluid" id="data-airquality">
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+   
+<div class="container-fluid">
+    <!-- Example row of columns -->
+    <div class="row">
+        
+        <div class="container-fluid" id="data-temperature">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+
+
+    <div class="container-fluid">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="container-fluid" id="data-humidity">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var chartTemperatue;
+        var chartHumidity;
+        var chartairquality;
+
+        function requestData()
+        {
+            // Ajax call to get the Data from Flask
+            var requests = $.get('/data');
+
+            var tm = requests.done(function (result)
+            {
+                // Temperature
+                var seriesTemperature = chartTemperatue.series[0],
+                    shiftTemperature = seriesTemperature.data.length > 20;
+
+                // Humidity
+                var seriesHumidity = chartHumidity.series[0],
+                    shiftHumidity = seriesTemperature.data.length > 20;
+
+               // Humidity
+               var seriesairquality = chartairquality.series[0],
+                    shiftairquality = seriesairquality.data.length > 20;
+
+
+
+
+                // Add the Point
+                // Time Temperature\
+                var data1 = [];
+                data1.push(result[0]);
+                data1.push(result[1]);
+                var d1 = result[0];
+
+                // Add the Point
+                // Time Humidity
+                var data2 = [];
+                data2.push(result[0]);
+                data2.push(result[2]);
+
+
+
+              
+                // Add the Point
+                // Time Humidity
+                var data3 = [];
+                data3.push(result[0]);
+                data3.push(result[3]);
+
+
+
+
+
+
+
+
+
+                chartTemperatue.series[0].addPoint(data1, true, shiftTemperature);
+                chartHumidity.series[0].addPoint(data2, true, shiftHumidity);
+                chartairquality.series[0].addPoint(data3, true, shiftairquality);
+
+                // call it again after one second
+                setTimeout(requestData, 2000);
+
+            });
+        }
+
+        $(document).ready(function()
+        {
+            // --------------Chart 1 ----------------------------
+            chartTemperatue = new Highcharts.Chart({
+                chart:
+                    {
+                    renderTo: 'data-temperature',
+                    defaultSeriesType: 'area',
+                    events: {
+                        load: requestData
+                            }
+                    },
+                title:
+                    {
+                    text: 'Temperature'
+                    },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                        },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                            }
+                         },
+                series: [{
+                    color : '#c23d23',
+                    lineColor: '#303030',
+                    name: 'Temperature',
+                    data: []
+                }]
+            });
+            // --------------Chart 1 Ends - -----------------
+
+
+  // --------------Chart 3 ----------------------------
+  chartairquality = new Highcharts.Chart({
+                chart:
+                    {
+                    renderTo: 'data-airquality',
+                    defaultSeriesType: 'area',
+                    events: {
+                        load: requestData
+                            }
+                    },
+                title:
+                    {
+                    text: 'Air Quality'
+                    },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                        },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                            }
+                         },
+                series: [{
+                    color : '#71c172',
+                    lineColor: '#71976e',
+                    name: 'airquality',
+                    data: []
+                }]
+            });
+            // --------------Chart 1 Ends - -----------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            chartHumidity = new Highcharts.Chart({
+                chart:
+                    {
+                        renderTo: 'data-humidity',
+                        defaultSeriesType: 'area',
+                        events: {
+                            load: requestData
+                        }
+                    },
+                title:
+                    {
+                        text: 'Humidity'
+                    },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                    }
+                },
+                series: [{
+                    lineColor: '#1d82b8',
+                    name: 'Humidity',
+                    data: []
+                }]
+            });
+
+
+        });
+    </script>
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1><script>
+      document.write(d1);
+      </script> </h4>
+    
+
+
+
+
+<!-- ======= Get Started Section ======= -->
+<section id="get-started" class="padd-section text-center">
+
+  
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="feature-block">
+
+         
+          <h1><script>
+            document.write(d1);
+            </script> </h4>
+          
+          
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="feature-block">
+
+          <h1><script>
+            document.write(d1);
+            </script> </h4>
+        
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="feature-block">
+
+          <h1><script>
+            document.write(d1);
+            </script> </h4>
+        
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section><!-- End Get Started Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us padd-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-5 col-lg-3">
+            <img src="assets/img/about-img.png" alt="About" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+
+          <div class="col-md-7 col-lg-5">
+            <div class="about-content" data-aos="fade-left" data-aos-delay="100">
+
+              <h2><span>eStartup</span>UI Design Mobile </h2>
+              <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+              </p>
+
+              <ul class="list-unstyled">
+                <li><i class="fa fa-angle-right"></i>Creative Design</li>
+                <li><i class="fa fa-angle-right"></i>Retina Ready</li>
+                <li><i class="fa fa-angle-right"></i>Easy to Use</li>
+                <li><i class="fa fa-angle-right"></i>Unlimited Features</li>
+                <li><i class="fa fa-angle-right"></i>Unlimited Features</li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+
+    <!-- ======= Screenshots Section ======= -->
+    <section id="screenshots" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>App Gallery</h2>
+          <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+        </div>
+
+        <div class="owl-carousel owl-theme" data-aos="fade-up" data-aos-delay="100">
+
+          <div><img src="assets/img/screen/1.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/2.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/3.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/4.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/5.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/6.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/7.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/8.jpg" alt="img"></div>
+          <div><img src="assets/img/screen/9.jpg" alt="img"></div>
+
+        </div>
+      </div>
+
+    </section><!-- End Screenshots Section -->
+
+    <!-- ======= Video Section ======= -->
+    <section id="video" class="text-center">
+      <div class="overlay">
+        <div class="container-fluid container-full" data-aos="zoom-in">
+
+          <div class="row">
+            <a href="#" class="js-modal-btn play-btn" data-video-id="s22ViV7tBKE"></a>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Video Section -->
+
+ 
+
+   
+
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#">eAlarm</a>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Abou Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Abou Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Support</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">faq</a></li>
+              <li><a href="#">Editor help</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Abou Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+    </div>
+
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+
+
+
+
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/jquery/jquery.min.js') }}"></script>
+
+
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+
+  
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/php-email-form/validate.js') }}"></script>
+
+  
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/modal-video/js/modal-video.min.js') }}"></script>
+
+  
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+  
+
+  
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/superfish/superfish.min.js') }}"></script>
+
+  
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/hoverIntent/hoverIntent.js') }}"></script>
+  
+
+
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/vendor/aos/aos.js') }}"></script>
+
+
+
+  <script type="text/javascript"
+  src="{{ url_for('static', filename='styles/assets/js/main.js') }}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Vendor JS Files 
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="assets/vendor/modal-video/js/modal-video.min.js"></script>
+
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <script src="assets/vendor/superfish/superfish.min.js"></script>
+
+  <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+-->
+  <!-- Template Main JS File 
+  <script src="assets/js/main.js"></script>
+-->
+</body>
+
+</html>
