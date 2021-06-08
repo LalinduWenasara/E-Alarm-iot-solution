@@ -38,12 +38,12 @@ def main():
 def data():
     # Data Format
     # [TIME, Temperature, Humidity]
-    result1 = firebase1.get('/FirebaseIOT/humidity', None)
-    result2 = firebase1.get('FirebaseIOT/temperature', None)
-    result3 = firebase1.get('FirebaseIOT/smoke', None)
-    Temperature = result1
+    result2 = firebase1.get('/FirebaseIOT/humidity', None)
+    result3 = firebase1.get('FirebaseIOT/temperature', None)
+    result1 = firebase1.get('FirebaseIOT/smoke', None)
+    Temperature = result3
     Humidity = result2 
-    smoke = result3 
+    smoke = result1 
 
     data = [time() * 500, Temperature, Humidity, smoke]
 
@@ -98,7 +98,7 @@ def result():
             return redirect(url_for('test'))
         except:
             #If there is any error, redirect back to login
-            return redirect(url_for('test'))
+            return redirect(url_for('main'))
     else:
         if person["is_logged_in"] == True:
             return redirect(url_for('test'))
