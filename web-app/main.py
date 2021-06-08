@@ -41,11 +41,13 @@ def data():
     result2 = firebase1.get('/FirebaseIOT/humidity', None)
     result3 = firebase1.get('FirebaseIOT/temperature', None)
     result1 = firebase1.get('FirebaseIOT/smoke', None)
+    result4 = firebase1.get('FirebaseIOT/de1', None)
     Temperature = result3
     Humidity = result2 
     smoke = result1 
+    fire = result4
 
-    data = [time() * 500, Temperature, Humidity, smoke]
+    data = [time() * 500, Temperature, Humidity, smoke, fire]
 
     response = make_response(json.dumps(data))
 

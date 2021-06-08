@@ -83,6 +83,7 @@
 </head>
 
 <body>
+  
 
   <!-- ======= Header ======= -->
   <header id="header" class="header">
@@ -129,9 +130,7 @@
       <img src="/static/hero-img2.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
       <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
       <div class="btns">
-        <a href="#"><i class="fa fa-apple fa-3x"></i> App Store</a>
-        <a href="#"><i class="fa fa-play fa-3x"></i> Google Play</a>
-        <a href="#"><i class="fa fa-windows fa-3x"></i> windows</a>
+
       </div>
     </div>
   </section><!-- End Hero Section -->
@@ -146,59 +145,6 @@
 
 
   <main id="main">
-
-    <!-- ======= Get Started Section ======= -->
-    <section id="get-started" class="padd-section text-center">
-
-      <div class="container" data-aos="fade-up">
-        <div class="section-title text-center">
-
-          <h2>simple systeme fordiscount </h2>
-          <p class="separator">Integer cursus bibendum augue ac cursus .</p>
-
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="feature-block">
-
-              <img src="assets/img/svg/cloud.svg" alt="img" class="img-fluid">
-              <h4>introducing whatsapp</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-              <a href="#">read more</a>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="feature-block">
-
-              <img src="assets/img/svg/planet.svg" alt="img" class="img-fluid">
-              <h4>user friendly interface</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-              <a href="#">read more</a>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="feature-block">
-
-              <img src="assets/img/svg/asteroid.svg" alt="img" class="img-fluid">
-              <h4>build the app everyone love</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-              <a href="#">read more</a>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section><!-- End Get Started Section -->
 
 
 
@@ -372,6 +318,10 @@
 
 
     <script>
+
+
+
+        
         var chartTemperatue;
         var chartHumidity;
         var chartairquality;
@@ -421,8 +371,24 @@
                 data3.push(result[3]);
 
 
+                                // Add the Point
+                // Time Humidity
+                var data4 = [];
+                data4.push(result[0]);
+                data4.push(result[4]);
 
-
+          
+                
+                var firemode =data4;
+                document.getElementById("greeting").innerHTML = firemode[1];
+                var firemode1=firemode[1];
+          if(firemode1=="safe")
+          {
+            changeColor('white');
+          }
+          else{
+            changeColor('SeaShell');
+          }
 
 
 
@@ -562,6 +528,21 @@
 
 
         });
+
+        
+        var firemode1=firemode[1];
+       
+        
+    
+      function changeColor(color) {
+          document.body.style.background = color;
+      }
+        
+   
+
+
+
+
     </script>
 
 
@@ -584,6 +565,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
     <h1><script>
       document.write(d1);
       </script> </h4>
@@ -592,64 +584,27 @@
 
 
 
-<!-- ======= Get Started Section ======= -->
-<section id="get-started" class="padd-section text-center">
 
-  
-  <div class="container">
-    <div class="row">
 
-      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="feature-block">
 
+
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+     
          
-          <h1><script>
-            document.write(d1);
-            </script> </h4>
-          
-          
+    <h2>Location 1 fire status <span id="greeting"></span></h2>
 
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="feature-block">
+    
 
-          <h1><script>
-            document.write(d1);
-            </script> </h4>
-        
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-        <div class="feature-block">
-
-          <h1><script>
-            document.write(d1);
-            </script> </h4>
-        
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</section><!-- End Get Started Section -->
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </section><!-- End Get Started Section -->
 
 
 
@@ -732,7 +687,15 @@
     </section><!-- End Video Section -->
 
  
+  
+    
 
+    
+  <script>
+
+    
+       
+  </script>
    
 
 
